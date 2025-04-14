@@ -1,0 +1,212 @@
+
+:root{
+    --mainColor: #f2f2f2;
+    --mainColor2: #2e2e2e;
+    --boxBak: #2a2a2a;
+    --boxGry:#464646;
+    --boxBod:#777777;
+    /*other*/
+    --h:0;
+    --s:50%;
+    --l:50%;
+    --ss:66%;
+    --ll:75%;
+}
+body{
+    color: var(--mainColor);
+    font-size: 12px;
+    background: var(--boxBak);
+}
+
+/*自动布局类*/
+.df{
+    display: flex;
+}
+.df-ffc{
+    display: flex;
+    flex-flow: column;
+}
+.df-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gap4{
+    gap:4px;
+}
+.gap10{
+    gap:10px;
+}
+.gap16{
+    gap:16px;
+}
+.wh100{
+    width: 100%;
+    height: 100%;
+}
+.w100{
+    width: 100%;
+}
+.h100{
+    height: 100%;
+}
+.ovh{
+    overflow: hidden;
+}
+.bsb{
+    box-sizing: border-box;
+}
+.pos-r{
+    position: relative;
+}
+.pos-a{
+    position: absolute;
+}
+.pos-acc{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(50%,50%);
+}
+
+/*控件类*/
+input[type="color"]{
+    height: 26px;
+    background: var(--boxGry);
+    border: var(--boxBod) 1px solid;
+    border-radius: 4px;
+}
+input[type="text"]{
+    height: 22px;
+    color: var(--mainColor);
+    background: var(--boxGry);
+    border: var(--boxBod) 1px solid;
+    border-radius: 4px;
+}
+
+
+/* 隐藏range控件默认样式 */
+  [type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+  }
+
+  /* 定义range控件轨道的样式 */
+  [type="range"]::-webkit-slider-runnable-track {
+    height: 2px;
+    border-radius: 1px;
+    background: var(--boxBod);
+  }
+
+  /* 定义range控件容器的样式 */
+  [type="range" i]::-webkit-slider-container {
+    height: 20px;
+    overflow: hidden;
+  }
+
+  /* 定义range控件拇指的样式 */
+  [type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 16px;
+    border-radius: 4px;
+    background-color: var(--boxBod);
+    margin-top: -8px;
+  }
+
+  /*其他*/
+  .colorbox::-webkit-slider-runnable-track {
+    height: 18px;
+    border-radius: 1px;
+  }
+
+  .colorbox::-webkit-slider-container {
+    height: 34px;
+    overflow: hidden;
+  }
+
+  .colorbox::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1px;
+    height: 26px;
+    border-radius: 0;
+    background-color: transparent;
+    border:4px transparent solid;
+    border-top:4px var(--mainColor) solid;
+    border-bottom:4px var(--mainColor) solid;
+    margin-top: -4px;
+  }
+
+  .color-h::-webkit-slider-runnable-track{
+      background: linear-gradient(to right,red,orange,yellow,green,cyan,blue,purple,red);
+  }
+  .color-s::-webkit-slider-runnable-track{
+      background: linear-gradient(to right,hsl(var(--h),0%,var(--l)),hsl(var(--h),100%,var(--l)));
+  }
+  .color-l::-webkit-slider-runnable-track{
+      background: linear-gradient(to left,#ffffff,#000000);
+  }
+
+  .color-view{
+      width: 50px;
+      height: 50px;
+      background: hsl(var(--h),var(--s),var(--l));
+      border-radius: 10px;
+  }
+  .color-pick-hex{
+      width: 200px;
+      height: 200px;
+      background: 
+      linear-gradient(to bottom,#fff,#000),
+      linear-gradient(to left,hsl(var(--h),100%,50%),hsl(var(--h),0%,100%));
+      background-blend-mode: multiply;
+      position: relative;
+  }
+  .color-pick-hex::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 4px var(--mainColor) solid;
+      bottom:var(--ll);
+      left:var(--ss);
+      transform: translate(-50%,50%);
+  }
+  .color-pick-hsl{
+      width: 200px;
+      height: 200px;
+      background: 
+      linear-gradient(to bottom,#fff,transparent),
+      linear-gradient(to right,#888,transparent),
+      linear-gradient(to left,hsl(var(--h),100%,50%),hsl(var(--h),0%,100%));
+      background-blend-mode: multiply;
+      position: relative;
+  }
+  .color-pick-hsl::before{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(to bottom,#fff,#000);
+      mix-blend-mode:hard-light ;
+  }
+  .color-pick-hsl::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 4px var(--mainColor) solid;
+      bottom:var(--l);
+      left:var(--s);
+      transform: translate(-50%,50%);
+  }
+
+  [data-color-value]{
+    width: 130px;
+    text-align: center;
+  }
