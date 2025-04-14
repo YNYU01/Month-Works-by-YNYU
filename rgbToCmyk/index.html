@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightly-HTML-Project</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body class="df-ffc" style="gap:20px">
+    <div class="df" style="gap: 10px;">
+        <div class="color-view"></div>
+        <div class="df-ffc">
+            <input data-color-value="hsl" value="hsl(0,50%,50%)" type="text"/>
+            <input data-color-value="rgb" value="rgb(255,127,127)" type="text"/>
+        </div>
+    </div>
+
+    <div id="pick-box-hsl" class="color-pick-hsl" onclick="pickColor(this,event,'hsl')"></div>
+    <div class="color-pick-hex" onclick="pickColor(this,event,'hsv')"></div>
+
+    <div id="pick-box-rgb" class="df-ffc" style="width: 200px;">
+        <div class="df-cc gap4 cc">
+            H
+            <input id="h-range" class="colorbox color-h w100" min="0" max="360" value="0" type="range" 
+            oninput="reColor(this,'h','')"/>
+            <input id="h-text" type="text" style="width: 35px;" value="0" oninput="reColor(this,'h','')"/>
+        </div>
+        <div class="df-cc gap4 cc">
+            S
+            <input id="s-range" class="colorbox color-s w100" min="0" max="100" value="50" type="range"
+            oninput="reColor(this,'s','%')"/>
+            <input id="s-text" type="text" style="width: 35px;" value="50%" oninput="reColor(this,'s','%')"/>
+        </div>
+        <div class="df-cc gap4 cc">
+            L
+            <input id="l-range" class="colorbox color-l w100" min="0" max="100" value="50" type="range"
+            oninput="reColor(this,'l','%')"/>
+            <input id="l-text" type="text" style="width: 35px;" value="50%" oninput="reColor(this,'l','%')"/>
+        </div>
+    </div>
+    
+    
+    
+    
+</body>
+</html>
